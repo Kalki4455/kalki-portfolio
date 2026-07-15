@@ -1,0 +1,809 @@
+/* ==========================================================================
+   1. CSS VARIABLES & THEME CONFIGURATION (PREMIUM TOKYO DARK)
+   ========================================================================== */
+:root {
+    --bg-color: #0b0b0c; /* Deep Void Obsidian Black */
+    --card-bg: rgba(22, 22, 24, 0.6); /* Translucent glassmorphism black */
+    --text-color: #f0eff5; /* Soft neon paper-white */
+    --accent-color: #ff3344; /* High-vibrancy Tokyo neon-red */
+    --accent-dim: rgba(255, 51, 68, 0.15);
+    --tech-border: rgba(255, 255, 255, 0.07);
+    --font-serif: "Shippori Mincho", "Georgia", serif;
+    --font-sans: "Inter", "Helvetica Neue", sans-serif;
+    --font-code: "Fira Code", monospace;
+}
+
+/* ==========================================================================
+   2. SYSTEM RESET & CORE STYLING
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none; /* Custom premium cursor enabled */
+}
+
+/* CUSTOM NEON CURSOR */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.custom-cursor.cursor-hover {
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-dim);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR (STICKY WITH GLASS BLUR EFFECT)
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 11, 12, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--tech-border);
+}
+
+.logo {
+    font-family: var(--font-code);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-dim);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 2rem;
+    font-size: 0.8rem;
+    font-family: var(--font-code);
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   4. HERO SECTION & TECH BG MATRIX
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 50px 50px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    z-index: 1;
+    mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+}
+
+.vertical-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: var(--font-code);
+    font-size: 1.5rem;
+    letter-spacing: 0.4em;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    color: #444;
+    border-left: 1px solid var(--tech-border);
+    padding-left: 1.5rem;
+    z-index: 2;
+    animation: pulseVertical 4s infinite alternate;
+}
+
+@keyframes pulseVertical {
+    0% { color: #444; }
+    100% { color: var(--accent-color); text-shadow: 0 0 8px var(--accent-dim); }
+}
+
+.hero-intro {
+    max-width: 600px;
+    margin-left: 6rem;
+    z-index: 2;
+}
+
+.tech-badge {
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: #888;
+    border: 1px solid var(--tech-border);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge span {
+    color: var(--accent-color);
+}
+
+.hero-intro h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-family: var(--font-code);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-intro p {
+    font-size: 1rem;
+    color: #a0a0a5;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn-contact, .btn-secondary {
+    display: inline-block;
+    padding: 1.1rem 2.5rem;
+    font-family: var(--font-code);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.btn-contact {
+    border: 1px solid var(--accent-color);
+    color: #fff;
+    background: var(--accent-color);
+}
+
+.btn-contact:hover {
+    box-shadow: 0 0 25px var(--accent-color);
+}
+
+.btn-secondary {
+    border: 1px solid var(--tech-border);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+/* SCROLL REVEAL CLASS */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   5. PROJECTS ARCHIVE SECTION (GRID LAYOUT & HOVERS)
+   ========================================================================== */
+.work-section {
+    padding: 8rem 10%;
+    background-color: #0b0b0c;
+    border-top: 1px solid var(--tech-border);
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-header span {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section-header h3 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--tech-border);
+    border-radius: 4px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-info {
+    padding: 2rem;
+}
+
+.card-tech {
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-info h4 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #8e8e93;
+    font-weight: 300;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.01);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 45px rgba(255, 51, 68, 0.08);
+}
+
+.card-1 { grid-column: span 8; }
+.card-2 { grid-column: span 4; }
+.card-3 { grid-column: span 4; }
+.card-4 { grid-column: span 8; }
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.btn-small {
+    font-family: monospace;
+    font-size: 0.65rem;
+    padding: 6px 12px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* FIXED PREMIUM VIDEO ALIGNMENT & SIZING */
+.card-img {
+    width: 100%;
+    height: 280px; /* Video display height fixed */
+    background: #111112;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: #444;
+    border-bottom: 1px solid var(--tech-border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Video Wrapper for Widescreen 16:9 Aspect Ratio (Removes Black Bars) */
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #000;
+}
+
+.project-video-small {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Streches and scales perfectly to cover any black boxes */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .project-video-small {
+    transform: scale(1.05); /* Cyber-interactive zoom hover */
+}
+
+/* ==========================================================================
+   6. TECH SKILLS INTERACTIVE PROGRESS METERS
+   ========================================================================== */
+.skills-section {
+    padding: 8rem 10%;
+    border-top: 1px solid var(--tech-border);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+    margin-top: 4rem;
+}
+
+.skill-category {
+    background: var(--card-bg);
+    border: 1px solid var(--tech-border);
+    padding: 2.5rem;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.skill-category:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--tech-border);
+    padding-bottom: 1rem;
+}
+
+.category-num {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #1e1e21;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 2px;
+    transform: scaleX(0); 
+    transform-origin: left;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.reveal-on-scroll.active .progress-fill {
+    transform: scaleX(1);
+}
+
+/* Academic lists & Badge */
+.academic-list {
+    list-style: none;
+}
+
+.academic-list li {
+    font-size: 0.9rem;
+    padding: 8px 0;
+    color: #a0a0a5;
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.badge {
+    font-family: var(--font-code);
+    font-size: 0.65rem;
+    background: var(--accent-dim);
+    color: var(--accent-color);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+/* ==========================================================================
+   7. FIXED HIGH-FIDELITY RESUME VIEW SECTION (OPTIMIZED DIMENSIONS)
+   ========================================================================== */
+.resume-section {
+    padding: 8rem 10%;
+    background-color: #070708;
+    border-top: 1px solid var(--tech-border);
+}
+
+.resume-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr; /* Bada space left side resume preview ko diya */
+    gap: 4rem;
+    margin-top: 3.5rem;
+    align-items: stretch; /* Height will balance correctly on both sides */
+}
+
+/* HD PDF Viewer Frame */
+.resume-viewer {
+    width: 100%;
+    height: 750px; /* Bada and readable vertical canvas size */
+    background: #141416;
+    border: 1px solid var(--tech-border);
+    border-radius: 6px;
+    padding: 6px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.resume-viewer object {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e30;
+    border-radius: 4px;
+}
+
+/* Optimized Certificates Section */
+.certificates-section {
+    margin-top: 2rem;
+    border-top: 1px solid var(--tech-border);
+    padding-top: 1rem;
+}
+
+.cert-list {
+    list-style: disc; /* Yeh bullets/dots wapis layega */
+    padding-left: 20px;
+    margin-top: 1rem;
+}
+
+.cert-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Text aur dots ko ek line mein laane ke liye */
+    padding: 8px 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #a0a0a5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.cert-link {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cert-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.cert-date {
+    display: inline-block;
+    float: right; /* Date ko right side align karne ke liye */
+    color: var(--accent-color);
+}
+/* Fallback state inside object-tag if PDF loading gets delayed/blocked */
+.pdf-fallback-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 2rem;
+    background: radial-gradient(circle at center, #1b1b1e 0%, #0d0d0f 100%);
+    border-radius: 4px;
+}
+
+.fallback-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px var(--accent-dim));
+    animation: pulseIcon 2s infinite alternate;
+}
+
+@keyframes pulseIcon {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.pdf-fallback-state h5 {
+    font-family: var(--font-code);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.pdf-fallback-state p {
+    font-size: 0.8rem;
+    color: #666;
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.fallback-action {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.75rem;
+    border-color: var(--accent-color);
+    color: #fff;
+    background-color: var(--accent-dim);
+}
+
+.fallback-action:hover {
+    background-color: var(--accent-color);
+}
+
+/* Right Side Action controls */
+.resume-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.resume-actions h4 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.action-subtitle {
+    font-family: var(--font-code);
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.resume-actions p {
+    font-size: 1rem;
+    color: #a0a0a5;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.resume-actions .sub-text {
+    font-size: 0.85rem;
+    color: #666;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Large Glow Call-to-action trigger */
+.download-btn {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 51, 68, 0.2);
+}
+
+/* ==========================================================================
+   8. SYSTEM CONSOLE / TERMINAL CONTACT CARD
+   ========================================================================== */
+.contact {
+    padding: 10rem 10%;
+    background: #000;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #0b0b0c;
+    border: 1px solid var(--tech-border);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.terminal-header {
+    background: #111112;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--tech-border);
+}
+
+.terminal-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: #666;
+    margin-left: auto;
+}
+
+.contact-box h3 {
+    font-family: var(--font-code);
+    font-size: 1.8rem;
+    padding: 3rem 2rem 1rem;
+    color: var(--accent-color);
+}
+
+.contact-box p {
+    padding: 0 2rem 2.5rem;
+    color: #888;
+}
+
+.terminal-btn {
+    display: block;
+    width: calc(100% - 4rem);
+    margin: 0 2rem 3rem;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    background: var(--accent-dim);
+    color: var(--accent-color);
+}
+
+.terminal-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* ==========================================================================
+   9. FOOTER SECTION
+   ========================================================================== */
+footer {
+    padding: 3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #444;
+    font-family: var(--font-code);
+    border-top: 1px solid var(--tech-border);
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-dim);
+}
+
+/* ==========================================================================
+   10. SYSTEM MOBILE RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .resume-viewer {
+        height: 550px; /* Reduced viewer canvas for tablet interfaces */
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        cursor: default; /* Disable cursor overlay on touch devices */
+    }
+    .custom-cursor {
+        display: none;
+    }
+    header {
+        padding: 1rem 5%;
+    }
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 8rem 5% 0;
+    }
+    .vertical-title {
+        writing-mode: horizontal-tb;
+        height: auto;
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 1px solid var(--tech-border);
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    .hero-intro {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    .hero-intro h2 {
+        font-size: 2.2rem;
+    }
+    .card-img {
+        height: 200px; /* Scaling grid images down for portable screens */
+    }
+    .card-1, .card-2, .card-3, .card-4 {
+        grid-column: span 12;
+    }
+    .grid {
+        gap: 1.5rem;
+    }
+}
