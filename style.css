@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-
-=======
-/* ==========================================================================
-   1. CSS VARIABLES & THEME CONFIGURATION (PREMIUM TOKYO DARK)
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 :root {
     --bg-color: #0b0b0c; /* Deep Void Obsidian Black */
     --card-bg: rgba(22, 22, 24, 0.6); /* Translucent glassmorphism black */
@@ -17,12 +10,6 @@
     --font-code: "Fira Code", monospace;
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   2. SYSTEM RESET & CORE STYLING
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 * {
     margin: 0;
     padding: 0;
@@ -39,16 +26,9 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
-<<<<<<< HEAD
     cursor: none;
 }
 
-=======
-    cursor: none; /* Custom premium cursor enabled */
-}
-
-/* CUSTOM NEON CURSOR */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .custom-cursor {
     width: 20px;
     height: 20px;
@@ -68,12 +48,6 @@ body {
     border-color: var(--accent-color);
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   3. NAVIGATION BAR (STICKY WITH GLASS BLUR EFFECT)
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 header {
     display: flex;
     justify-content: space-between;
@@ -111,12 +85,6 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   4. HERO SECTION & TECH BG MATRIX
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .hero {
     height: 100vh;
     display: flex;
@@ -256,12 +224,6 @@ nav a:hover {
     transform: translateY(0);
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   5. PROJECTS ARCHIVE SECTION (GRID LAYOUT & HOVERS)
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .work-section {
     padding: 8rem 10%;
     background-color: #0b0b0c;
@@ -357,10 +319,6 @@ nav a:hover {
     color: #fff;
 }
 
-<<<<<<< HEAD
-=======
-/* FIXED PREMIUM VIDEO ALIGNMENT & SIZING */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .card-img {
     width: 100%;
     height: 280px; /* Video display height fixed */
@@ -376,10 +334,6 @@ nav a:hover {
     overflow: hidden;
 }
 
-<<<<<<< HEAD
-=======
-/* Video Wrapper for Widescreen 16:9 Aspect Ratio (Removes Black Bars) */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .video-container {
     width: 100%;
     height: 100%;
@@ -399,12 +353,6 @@ nav a:hover {
     transform: scale(1.05); /* Cyber-interactive zoom hover */
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   6. TECH SKILLS INTERACTIVE PROGRESS METERS
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .skills-section {
     padding: 8rem 10%;
     border-top: 1px solid var(--tech-border);
@@ -500,12 +448,6 @@ nav a:hover {
     margin-left: 10px;
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   7. FIXED HIGH-FIDELITY RESUME VIEW SECTION (OPTIMIZED DIMENSIONS)
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .resume-section {
     padding: 8rem 10%;
     background-color: #070708;
@@ -514,7 +456,6 @@ nav a:hover {
 
 .resume-container {
     display: grid;
-<<<<<<< HEAD
     grid-template-columns: 1.4fr 1fr;
     gap: 4rem;
     margin-top: 3.5rem;
@@ -524,18 +465,6 @@ nav a:hover {
 .resume-viewer {
     width: 100%;
     height: 750px;
-=======
-    grid-template-columns: 1.4fr 1fr; /* Bada space left side resume preview ko diya */
-    gap: 4rem;
-    margin-top: 3.5rem;
-    align-items: stretch; /* Height will balance correctly on both sides */
-}
-
-/* HD PDF Viewer Frame */
-.resume-viewer {
-    width: 100%;
-    height: 750px; /* Bada and readable vertical canvas size */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
     background: #141416;
     border: 1px solid var(--tech-border);
     border-radius: 6px;
@@ -554,10 +483,6 @@ nav a:hover {
     border-radius: 4px;
 }
 
-<<<<<<< HEAD
-=======
-/* Optimized Certificates Section */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .certificates-section {
     margin-top: 2rem;
     border-top: 1px solid var(--tech-border);
@@ -565,11 +490,7 @@ nav a:hover {
 }
 
 .cert-list {
-<<<<<<< HEAD
     list-style: disc;
-=======
-    list-style: disc; /* Yeh bullets/dots wapis layega */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
     padding-left: 20px;
     margin-top: 1rem;
 }
@@ -577,11 +498,7 @@ nav a:hover {
 .cert-list li {
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
     align-items: center;
-=======
-    align-items: center; /* Text aur dots ko ek line mein laane ke liye */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
     padding: 8px 0;
     font-family: monospace;
     font-size: 0.85rem;
@@ -602,17 +519,10 @@ nav a:hover {
 
 .cert-date {
     display: inline-block;
-<<<<<<< HEAD
     float: right;
     color: var(--accent-color);
 }
 
-=======
-    float: right; /* Date ko right side align karne ke liye */
-    color: var(--accent-color);
-}
-/* Fallback state inside object-tag if PDF loading gets delayed/blocked */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .pdf-fallback-state {
     display: flex;
     flex-direction: column;
@@ -664,10 +574,6 @@ nav a:hover {
     background-color: var(--accent-color);
 }
 
-<<<<<<< HEAD
-=======
-/* Right Side Action controls */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .resume-actions {
     display: flex;
     flex-direction: column;
@@ -705,10 +611,6 @@ nav a:hover {
     margin-bottom: 2.5rem;
 }
 
-<<<<<<< HEAD
-=======
-/* Large Glow Call-to-action trigger */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .download-btn {
     width: 100%;
     text-align: center;
@@ -717,12 +619,6 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(255, 51, 68, 0.2);
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   8. SYSTEM CONSOLE / TERMINAL CONTACT CARD
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 .contact {
     padding: 10rem 10%;
     background: #000;
@@ -793,12 +689,6 @@ nav a:hover {
     box-shadow: 0 0 15px var(--accent-color);
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
-   9. FOOTER SECTION
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 footer {
     padding: 3rem 10%;
     display: flex;
@@ -820,24 +710,13 @@ footer {
     text-shadow: 0 0 5px var(--accent-dim);
 }
 
-<<<<<<< HEAD
-
-=======
-/* ==========================================================================
-   10. SYSTEM MOBILE RESPONSIVENESS OVERRIDES
-   ========================================================================== */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
 @media (max-width: 1024px) {
     .resume-container {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
     .resume-viewer {
-<<<<<<< HEAD
         height: 550px;
-=======
-        height: 550px; /* Reduced viewer canvas for tablet interfaces */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
     }
 }
 
@@ -850,11 +729,7 @@ footer {
 
 @media (max-width: 768px) {
     body {
-<<<<<<< HEAD
         cursor: default;
-=======
-        cursor: default; /* Disable cursor overlay on touch devices */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
     }
     .custom-cursor {
         display: none;
@@ -885,11 +760,7 @@ footer {
         font-size: 2.2rem;
     }
     .card-img {
-<<<<<<< HEAD
         height: 200px;
-=======
-        height: 200px; /* Scaling grid images down for portable screens */
->>>>>>> f0846e174d408e7b207ab052728b68310d2fbfc2
     }
     .card-1, .card-2, .card-3, .card-4 {
         grid-column: span 12;
